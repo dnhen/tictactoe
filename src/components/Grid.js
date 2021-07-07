@@ -16,9 +16,9 @@ const Grid = () => {
   return (
     <div>
       {grid.map((row, rowId) => {
-        return <div>
+        return <div key={rowId}>
           {row.map((cell, cellId) => {
-            return <Cell id={cellId} />
+            return <Cell key={cellId} id={rowId + '-' + cellId} />
           })}
         </div>
       })}

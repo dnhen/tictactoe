@@ -38,5 +38,6 @@ body {
 
 .cell span {
   font-size: 50px;
-  line-height: 180px;
+  position: relative;
+  top: 30%;
 }

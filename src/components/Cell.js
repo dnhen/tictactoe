@@ -1,11 +1,11 @@
-const Cell = () => {
-  const onClick = () => {
-    console.log("Click");
-  }
+import { useState } from 'react';
+
+const Cell = ( {id} ) => {
+  const [currVal, setVal] = useState('-');
 
   return (
-    <div className="cell" onClick={onClick}>
-      <span> </span>
+    <div className="cell" id={id} onClick={(e) => setVal('X')}>
+      <span>{currVal}</span>
     </div>
   );
 }
