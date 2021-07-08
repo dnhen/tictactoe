@@ -1,27 +1,15 @@
 import Cell from './Cell';
 
-const GRID_SIZE = 3; // GRID_SIZE = 3, grid = 3 x 3
-
-const Grid = () => {
-  // Create the GRID_SIZE x GRID_SIZE grid
-  const grid = [];
-  for(let row = 0; row < GRID_SIZE; row++){
-    let currRow = [];
-    for(let col = 0; col < GRID_SIZE; col++){
-      currRow.push([]);
-    }
-    grid.push(currRow);
+const Grid = ( {cells, onClick} ) => {
+  const gridStyle = { // Set the grid of cells to be a correct square
+    gridTemplate: 'repeat(' + Math.sqrt(cells.length) + ', 1fr) / repeat(' + Math.sqrt(cells.length) + ', 1fr)',
   }
 
   return (
-    <div>
-      {grid.map((row, rowId) => {
-        return <div key={rowId}>
-          {row.map((cell, cellId) => {
-            return <Cell key={cellId} id={rowId + '-' + cellId} />
-          })}
-        </div>
-      })}
+    <div className="grid" style={gridStyle}>
+      {cells.map((cell, i) => (
+        <Cell key={i} value={cell} onClick={() => onClick(i)} />
+      ))}
     </div>
   );
 }

@@ -1,12 +1,10 @@
-import { useState } from 'react';
-
-const Cell = ( {id} ) => {
-  const [currVal, setVal] = useState('-');
+const Cell = ( {value, onClick} ) => {
+  const style = value ? `cell ${value}` : `cell`;
 
   return (
-    <div className="cell" id={id} onClick={(e) => setVal('X')}>
-      <span>{currVal}</span>
-    </div>
+    <button className={style} onClick={onClick}>
+      {value}
+    </button>
   );
 }
 

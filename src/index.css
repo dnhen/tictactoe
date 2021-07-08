@@ -13,6 +13,8 @@ body {
   margin: 30px auto;
   overflow: auto;
   text-align: center;
+  justify-content: center;
+  display: flex;
 }
 
 .header {
@@ -27,17 +29,24 @@ body {
   margin: 0;
 }
 
+.grid {
+  display: grid;
+  gap: 1rem;
+  width: 500px;
+  height: 500px;
+}
+
 .cell {
-  margin: 2px;
-  width: 180px;
-  height: 180px;
   border: 1px solid #28363D;
   display: inline-block;
   cursor: pointer;
+  font-size: 50px;
 }
 
-.cell span {
-  font-size: 50px;
-  position: relative;
-  top: 30%;
+.X {
+  background-color: #658B6F;
+}
+
+.O {
+  background-color: #2F575D;
 }
